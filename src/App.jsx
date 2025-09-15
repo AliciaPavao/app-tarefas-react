@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header/index"
 import Relogio from "./components/Clock/index"
 import TaskInput from "./components/TaskInput/index"
-// import TaskList from "./components/TaskList/index"
+import TaskList from "./components/TaskList/index"
 import styles from "./App.module.css";
 
 function App() {
@@ -20,6 +20,17 @@ function App() {
     }])
   }
 
+  // editar tarefa
+  const editTask = (id, newText) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, text: newText } : task 
+      )
+    )
+  }
+
+  // restaurar tarefa
+
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks))
   }, [tasks])
@@ -29,7 +40,7 @@ function App() {
       <Header/>
       <Relogio/>
       <TaskInput addTask={addTask}/>
-      {/* <TaskList/> */}
+      <TaskList/>
 
       <div className={styles.listsContainer}></div>
     </div>
