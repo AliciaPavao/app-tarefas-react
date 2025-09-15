@@ -29,7 +29,28 @@ function App() {
     )
   }
 
+  // toggle task
+  const toggleTask = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task 
+      )
+    )
+  }
+
+  // deletar tarefa
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id))
+  }
+
   // restaurar tarefa
+  const restoreTask = (id) => {
+    setTasks(
+      tasks.map((task) => 
+        task.id === id ? { ...task, completed: false} :task
+      )
+    )
+  }
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks))

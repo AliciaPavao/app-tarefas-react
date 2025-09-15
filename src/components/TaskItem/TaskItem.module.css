@@ -1,0 +1,63 @@
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: aliceblue;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .text {
+    cursor: pointer;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: #64748b;
+  }
+  
+  .completedHighLight {
+    text-decoration: none;
+    font-weight: bold;
+    color: greenyellow;
+    background-color: aquamarine;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  
+  .input {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #9fb0c9;
+    border-radius: 6px;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .edit {
+    background: transparent;
+    border: none;
+    color: blue;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .delete {
+    background: transparent;
+    border: none;
+    color: red;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .delete:hover {
+    color: red;
+  }
